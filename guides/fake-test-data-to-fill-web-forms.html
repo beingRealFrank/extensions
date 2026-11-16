@@ -1,0 +1,20 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Four ways to fill sign-up, checkout and contact forms with believable fake data when testing, and what to avoid putting in a test form."><title>How to fill web forms with fake test data</title><link rel="stylesheet" href="../style.css"></head><body>
+<h1>How to fill web forms with fake test data</h1>
+<p>Testing a form by typing "asdf" into every field gets old fast, and it misses bugs that real-looking data would catch, like a long surname, an accented letter or a plus sign in an email. Here are four ways to fill a form with fake data, from quickest to most repeatable.</p>
+<h2>1. Type a small set of sample values</h2>
+<p>Keep a note with one full set: a name, an address, a phone number and an email on a domain you control or on <code>example.com</code>. Paste from it each time. This is fine for a handful of runs, and it breaks down when you need variety.</p>
+<h2>2. Use a data generator</h2>
+<p>Libraries such as Faker (for JavaScript, Python and other languages) generate names, addresses, dates and text. They are the right choice for automated tests and seed data, because the output can be fixed with a seed and checked into your test suite.</p>
+<h2>3. Fill the form from the browser</h2>
+<p>For manual testing, a form-filling extension saves the copy-and-paste step.</p>
+<ol><li>Install <a href="https://chromewebstore.google.com/detail/hdjjpmhnpoadkhphbdpdedimcdgcabhk">Fake Form Filler – Test Data Autofill</a> from the Chrome Web Store.</li><li>Open the page with the form.</li><li>Click the extension icon, or right-click the page and choose "Fill form with fake data".</li><li>Check the result and submit.</li></ol>
+<p>It fills text, email, phone, address, date and number fields, chooses dropdown options and radio buttons, and ticks required checkboxes. Email addresses use <code>example.com</code>, so a test submission cannot reach a real person. Payment, identity and security-code fields are left empty on purpose. See the <a href="../fake-form-filler/index.html">help page</a>.</p>
+<h2>4. Use your browser's own autofill</h2>
+<p>Chrome can fill a saved address profile into a form. That works for checking layout, but it uses your real details, so avoid it on a shared test site or a screen recording.</p>
+<h2>What not to put in a test form</h2>
+<ul><li>Real card numbers. Use the test card numbers your payment provider publishes.</li><li>Real government ID or tax numbers.</li><li>Other people's names and emails. Use reserved domains such as <code>example.com</code> so that a stray email goes nowhere.</li></ul>
+<h2>Common problems</h2>
+<h3>A field is rejected as invalid</h3><p>Check the field's pattern or length rules. Some forms accept only certain phone formats or postcodes for one country.</p>
+<h3>The page uses a custom dropdown</h3><p>Custom widgets that are not real <code>select</code> elements may need a click by hand.</p>
+<h3>The form clears itself after filling</h3><p>Some frameworks reset a field when it receives no input event. Click into the field once and tab out to trigger validation.</p>
+<footer><a href="../index.html">All extensions</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="mailto:frankjgilroy@gmail.com">frankjgilroy@gmail.com</a></footer></body></html>
