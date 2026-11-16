@@ -1,0 +1,19 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Three ways to copy a table from a website into Excel or Google Sheets without losing the columns, and how to save it as a CSV file."><title>How to copy a table from a website into Excel or Google Sheets</title><link rel="stylesheet" href="../style.css"></head><body>
+<h1>How to copy a table from a website into Excel or Google Sheets</h1>
+<p>Copying a table from a web page often pastes everything into one column, or drops merged cells. Here are three ways to get a clean table into a spreadsheet, from the simplest to the most reliable.</p>
+<h2>1. Select and paste</h2>
+<ol><li>Drag from the first cell of the table to the last cell. Hold Shift and click the last cell if the table is long.</li><li>Copy with Ctrl+C (Cmd+C on a Mac).</li><li>Click cell A1 in Excel or Google Sheets and paste.</li></ol>
+<p>This works for simple tables. It tends to fail when the page uses a grid made of <code>div</code> elements instead of a real table, when rows are loaded as you scroll, or when cells are merged.</p>
+<h2>2. Paste as plain text first</h2>
+<p>If the formatting comes out messy, paste into a plain text editor first, then copy from there into the spreadsheet. Tabs between the cells are kept, so the columns usually line up. In Excel you can also use Paste Special, then Text.</p>
+<h2>3. Use a table copier extension</h2>
+<p>An extension reads the table's structure instead of the selected text, so the columns stay in place and merged cells are filled in.</p>
+<ol><li>Install <a href="https://chromewebstore.google.com/detail/fijoplpaojefdjffnppdeanabffgecph">Table to CSV &amp; Excel – Table Copier</a> from the Chrome Web Store.</li><li>Open the page with the table and click the extension icon.</li><li>Pick the table from the list. It is outlined on the page so you can see which one it is.</li><li>Choose Copy and paste into your spreadsheet, or Download to save a CSV file.</li></ol>
+<p>It runs only on the page you click it on, and sends nothing anywhere. See the <a href="../table-to-csv/index.html">help page</a> for details.</p>
+<h2>Save a table as a CSV file</h2>
+<p>A CSV file is plain text with one row per line and commas between cells. Excel, Google Sheets, Numbers and databases all open it. To make one by hand, paste the table into a spreadsheet and use File, then Save As (Excel) or File, Download, Comma-separated values (Sheets). With the extension, the Download button does this in one step.</p>
+<h2>Common problems</h2>
+<h3>Everything lands in one column</h3><p>In Excel, select the column and use Data, then Text to Columns, and pick Tab or Comma. In Sheets, use Data, then Split text to columns.</p>
+<h3>Numbers turn into dates</h3><p>Format the destination columns as Text before pasting, or import the CSV through Data, then From Text/CSV and set the column type.</p>
+<h3>Accented letters look wrong in a CSV</h3><p>Open the file through the import dialog and choose UTF-8 as the encoding.</p>
+<footer><a href="../index.html">All extensions</a> · <a href="../privacy.html">Privacy</a> · <a href="../terms.html">Terms</a> · <a href="mailto:frankjgilroy@gmail.com">frankjgilroy@gmail.com</a></footer></body></html>
